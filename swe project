@@ -1,0 +1,124 @@
+#include <stdio.h>
+#include <math.h>
+
+double add(double a, double b) {
+    return a + b;
+}
+
+double subtract(double a, double b) {
+    return a - b;
+}
+
+double multiply(double a, double b) {
+    return a * b;
+}
+
+double divide(double a, double b) {
+    return a / b;
+}
+
+double squareRoot(double a) {
+    return sqrt(a);
+}
+
+double power(double base, double exponent) {
+    return pow(base, exponent);
+}
+
+double logarithm(double a) {
+    return log10(a);
+}
+
+double sine(double a) {
+    return sin(a);
+}
+
+double cosine(double a) {
+    return cos(a);
+}
+
+double tangent(double a) {
+    return tan(a);
+}
+
+int main() {
+    int choice;
+    double num1, num2, result;
+
+    printf("Calculator\n");
+    printf("==========\n");
+    printf("1. Addition\n");
+    printf("2. Subtraction\n");
+    printf("3. Multiplication\n");
+    printf("4. Division\n");
+    printf("5. Square Root\n");
+    printf("6. Power\n");
+    printf("7. Logarithm\n");
+    printf("8. Sine\n");
+    printf("9. Cosine\n");
+    printf("10. Tangent\n");
+    printf("Enter your choice (1-10): ");
+    scanf("%d", &choice);
+
+    if (choice >= 1 && choice <= 4) {
+        printf("Enter the first number: ");
+        scanf("%lf", &num1);
+        printf("Enter the second number: ");
+        scanf("%lf", &num2);
+    } else if (choice >= 5 && choice <= 10) {
+        printf("Enter the number: ");
+        scanf("%lf", &num1);
+    } else {
+        printf("Invalid choice! Please select a number between 1 and 10.\n");
+        return 0;
+    }
+
+    switch (choice) {
+        case 1:
+            result = add(num1, num2);
+            printf("Result: %.2lf\n", result);
+            break;
+        case 2:
+            result = subtract(num1, num2);
+            printf("Result: %.2lf\n", result);
+            break;
+        case 3:
+            result = multiply(num1, num2);
+            printf("Result: %.2lf\n", result);
+            break;
+        case 4:
+            if (num2 != 0) {
+                result = divide(num1, num2);
+                printf("Result: %.2lf\n", result);
+            } else {
+                printf("Error: Division by zero is not allowed.\n");
+            }
+            break;
+        case 5:
+            result = squareRoot(num1);
+            printf("Result: %.2lf\n", result);
+            break;
+        case 6:
+            result = power(num1, num2);
+            printf("Result: %.2lf\n", result);
+            break;
+        case 7:
+            result = logarithm(num1);
+            printf("Result: %.2lf\n", result);
+            break;
+        case 8:
+            result = sine(num1);
+            printf("Result: %.2lf\n", result);
+            break;
+        case 9:
+            result = cosine(num1);
+            printf("Result: %.2lf\n", result);
+            break;
+        case 10:
+            result = tangent(num1);
+            printf("Result: %.2lf\n", result);
+            break;
+    }
+
+    return 0;
+}
